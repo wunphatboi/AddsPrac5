@@ -1,12 +1,18 @@
 #include <iostream>
 #include "Sort.h"
 #include "BubbleSort.h"
+#include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 int main(void){
-    Sort *s = new BubbleSort;
-    std::vector<int> vec = {5,1,4,2,8};
-    std::vector<int> now = s->sort(vec);
-    for (int i = 0; i < now.size(); i++){
-        std::cout << now[i] << " ";
-    }
+    Sort *b = new BubbleSort;
+    Sort *q = new QuickSort;
+    RecursiveBinarySearch r;
+    std::vector<int> vec = {1,2,3,4,5};
+    //std::vector<int> now = b->sort(vec);
+    //std::vector<int> now2 = q->sort(vec);
+    std::cout << r.search(vec,6);
+    /*for (int i = 0; i < now2.size(); i++){
+        std::cout << now2[i] << " ";
+    }*/
     return 0;
 }
