@@ -1,19 +1,17 @@
 #include "RecursiveBinarySearch.h"
-
-
-bool RecursiveBinarySearch::binarySearch(std::vector<int> arr, int l, int r, int x){
+bool RecursiveBinarySearch::binarySearch(std::vector<int> arr, int l, int r, int target){
       if(l < r)
     {
         int mid=(r + l)/2;
-        if (arr[mid] == x)
+        if (arr[mid] == target)
             return true;
-        else if (arr[mid] > x)// this was correct after all
-            return binarySearch(arr,l,mid -1, x);
+        else if (arr[mid] > target)
+            return binarySearch(arr,l,mid -1, target);
         else
-            return binarySearch(arr,mid + 1,r, x);// was error here
+            return binarySearch(arr,mid + 1,r, target);
     }
-    else if(arr[l] == x) return true;// found x
-    else return false;// x not found
+    else if(arr[l] == target) return true;
+    else return false;
 };
 
 bool RecursiveBinarySearch::search(std::vector<int> arr, int target){
