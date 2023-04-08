@@ -1,10 +1,18 @@
 #include <iostream>
+#include <sstream>
 #include "Sort.h"
 #include "BubbleSort.h"
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 int main(){
-    std::vector<int> list = {0,3,5,4,-5,100,7777,2014};
+    std::string input;
+    std::getline(std::cin, input);
+    std::istringstream iss(input);
+    std::vector<int> list;
+    int num;
+    while (iss >> num) {
+        list.push_back(num);
+    }
     QuickSort quicksort;
     RecursiveBinarySearch binarysearch;
     std::vector<int> slist = quicksort.sort(list);
