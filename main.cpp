@@ -3,14 +3,23 @@
 #include "BubbleSort.h"
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
-int main(void){
-    RecursiveBinarySearch r;
-    std::vector<int> vec = {1,2,3,4,5};
-    //std::vector<int> now = b->sort(vec);
-    //std::vector<int> now2 = q->sort(vec);
-    std::cout << r.search(vec,6);
-    /*for (int i = 0; i < now2.size(); i++){
-        std::cout << now2[i] << " ";
-    }*/
+int main(){
+    std::vector<int> list = {0,3,5,4,-5,100,7777,2014};
+    QuickSort quicksort;
+    RecursiveBinarySearch binarysearch;
+    std::vector<int> slist = quicksort.sort(list);
+    bool found = binarysearch.search(slist,1);
+    if (found == true){
+        std::cout<< "true ";
+        for (int i = 0; i < slist.size(); i++){
+            std::cout << slist[i] << " ";
+        }
+    }
+    if (found == false){
+        std::cout<< "false ";
+        for (int i = 0; i < slist.size(); i++){
+            std::cout << slist[i] << " ";
+        }
+    }
     return 0;
 }
