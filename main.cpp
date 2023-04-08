@@ -4,8 +4,6 @@
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 int main(void){
-    Sort *b = new BubbleSort;
-    Sort *q = new QuickSort;
     RecursiveBinarySearch r;
     std::vector<int> vec = {1,2,3,4,5};
     //std::vector<int> now = b->sort(vec);
